@@ -21,4 +21,11 @@ class ForgotPasswordPage(LoginPage):
         self.input_email('milan_radonich13@yandex.ru')
         self.click_recovery()
 
+    def transition_to_forgot_password_page(self):
+        self.click_account()
+        self.click_recovery_pass()
+        self.navigate(self.ForgotPasswordLocators.FORGOT_PASS_PAGE)
+        current_url = self.driver.current_url
+        return current_url == self.ForgotPasswordLocators.FORGOT_PASS_PAGE
+
 

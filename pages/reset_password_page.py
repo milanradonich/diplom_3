@@ -23,22 +23,25 @@ class ResetPasswordPage(ForgotPasswordPage):
         self.click_element(self.ResetPasswordLocators.ICON_SVG)
 
     def input_active(self):
-        try:
-            self.present_in_element(self.ResetPasswordLocators.NEW_PASSWORD_INPUT_TEXT)
-            return True
-        except:
-            return False
+        return self.present_in_element(self.ResetPasswordLocators.NEW_PASSWORD_INPUT_TEXT)
+
+    def check_click_recovery_btn(self):
+        self.click_account()
+        self.click_recovery_pass()
+        self.enter_email_and_click_recovery()
+        self.wait_visible_url(self.ResetPasswordLocators.RESET_PASS_PAGE)
+        assert self.driver.current_url == self.ResetPasswordLocators.RESET_PASS_PAGE
 
     def click_icon_show_password(self):
-        time.sleep(2)
+
         self.click_account()
-        time.sleep(2)
+
         self.click_recovery_pass()
-        time.sleep(2)
+
         self.enter_email_and_click_recovery()
-        time.sleep(2)
+
         self.input_new_password()
-        time.sleep(2)
+
         self.click_to_svg()
-        time.sleep(2)
+
         return self.input_active()
