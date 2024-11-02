@@ -11,3 +11,4 @@ class LoginPage(HeaderPage):
 
     def click_recovery_pass(self):
         self.click_element(LoginLocators.RECOVER_PASSWORD_LINK)
+

@@ -8,9 +8,4 @@ class TestPasswordRecovery:
     def test_password_recovery_by_click_recover_password(self, setup_home_page):
         driver = setup_home_page
         forgot_pass = ResetPasswordPage(driver)
-        forgot_pass.set_new_password()
-
-
-
-
-
+        assert forgot_pass.set_new_password() == True
