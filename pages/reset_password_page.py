@@ -15,8 +15,11 @@ class ResetPasswordPage(ForgotPasswordPage):
         self.click_element(ResetPasswordLocators.ICON_SVG)
 
     def input_active(self):
-        self.find_element(ResetPasswordLocators.NEW_PASSWORD_INPUT_TEXT)
-        return True
+        try:
+            self.present_in_element(ResetPasswordLocators.NEW_PASSWORD_INPUT_TEXT)
+            return True
+        except:
+            return False
 
     def set_new_password(self):
         time.sleep(2)
@@ -30,5 +33,4 @@ class ResetPasswordPage(ForgotPasswordPage):
         time.sleep(2)
         self.click_to_svg()
         time.sleep(2)
-        self.input_active()
-
+        return self.input_active()
