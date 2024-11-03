@@ -6,13 +6,13 @@ class ForgotPasswordPage(LoginPage):
     class ForgotPasswordLocators:
         FORGOT_PASS_PAGE = 'https://stellarburgers.nomoreparties.site/forgot-password'
         RECOVERY_BUTTON = By.XPATH, "//button[text()='Восстановить']"  # кнопка восстановить
-        EMAIL_LABEL = By.XPATH, "//input[@type='text' and @name='name']"  # форма email
+        EMAIL_INPUT = By.XPATH, "//input[@type='text' and @name='name']"  # форма email
 
     def __init__(self, driver):
         super().__init__(driver)
 
     def input_email(self, email):
-        self.input_symbols(self.ForgotPasswordLocators.EMAIL_LABEL, email)
+        self.input_symbols(self.ForgotPasswordLocators.EMAIL_INPUT, email)
 
     def click_recovery(self):
         self.click_element(self.ForgotPasswordLocators.RECOVERY_BUTTON)
