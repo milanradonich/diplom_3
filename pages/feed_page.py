@@ -1,14 +1,14 @@
-
 import allure
+
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from pages.login_page import LoginPage
-from pages.main_page import MainPage
+from pages.base_page import BasePage
 from pages.order_history_page import OrderHistory
 from pages.profile_page import ProfilePage
 
 
-class FeedPage(MainPage):
+class FeedPage(BasePage):
     class FeedLocators:
         ORDERS_LINK = By.XPATH, "//a[normalize-space()='Лента Заказов']"
         FEED_PAGE = 'https://stellarburgers.nomoreparties.site/feed'

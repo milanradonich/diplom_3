@@ -3,10 +3,10 @@ import time
 import allure
 from selenium.webdriver.common.by import By
 from pages.login_page import LoginPage
-from pages.main_page import MainPage
+from pages.base_page import BasePage
 
 
-class ProfilePage(MainPage):
+class ProfilePage(BasePage):
     class ProfileLocators:
         PROFILE_PAGE_URL = 'https://stellarburgers.nomoreparties.site/account/profile'
         BTN_LOGOUT = By.XPATH, '//button[text()="Выход"]'

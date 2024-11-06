@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-class MainPage:
+class BasePage:
     class MainLocators:
         ACCOUNT = By.XPATH, "//a[@href='/account']"
         BTN_ORDER = By.XPATH, '//button[text()="Оформить заказ"]'

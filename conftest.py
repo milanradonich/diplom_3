@@ -13,7 +13,7 @@ class WebdriverFactory:
             return webdriver.Chrome()
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="function", params=["chrome", "firefox"])
 def driver_setup(request):
     browser_name = request.param
     driver = WebdriverFactory.getwebdriver(browser_name)

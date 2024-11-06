@@ -3,11 +3,11 @@ import allure
 from selenium.webdriver.common.by import By
 
 from pages.login_page import LoginPage
-from pages.main_page import MainPage
+from pages.base_page import BasePage
 from pages.profile_page import ProfilePage
 
 
-class OrderHistory(MainPage):
+class OrderHistory(BasePage):
     class OrderHistoryLocators:
         ORDER_HISTORY_URL = 'https://stellarburgers.nomoreparties.site/account/order-history'
         BTN_LOGOUT = By.XPATH, '//button[text()="Выход"]'

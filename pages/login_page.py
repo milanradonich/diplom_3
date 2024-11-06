@@ -3,10 +3,10 @@ import allure
 from selenium.webdriver.common.by import By
 
 from database import MyAcc
-from pages.main_page import MainPage
+from pages.base_page import BasePage
 
 
-class LoginPage(MainPage):
+class LoginPage(BasePage):
     class LoginLocators:
         LOGIN_PAGE = 'https://stellarburgers.nomoreparties.site/login'
         RECOVER_PASSWORD_LINK = By.XPATH, "//a[text()='Восстановить пароль']"
