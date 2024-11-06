@@ -27,5 +27,3 @@ def setup_home_page(driver_setup):
     driver.maximize_window()
     driver.get(BASE_URL)
     yield driver
-
-
